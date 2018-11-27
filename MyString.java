@@ -27,7 +27,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
           }
 
           if (!testStr.subSequence(1,7).toString().equals(refStr.subSequence(1,7))) {
-               System.out.println(++c + ". subSequence(1,7) is not " + refStr.subSequence(1,7));
+               System.out.println(++c + ". subSequence(1,7) is + " + refStr.subSequence(1,7));
           }
 
           try {
@@ -98,7 +98,7 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
           if (start < 0 || end >= data.length || start > end) {
                throw new IndexOutOfBoundsException();
           }
-          for (int i = start; i <= end; i++) {
+          for (int i = start; i < end; i++) {
                result = result + data[i];
           }
           return result;
