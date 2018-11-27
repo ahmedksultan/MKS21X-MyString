@@ -1,12 +1,6 @@
 public class MyString implements CharSequence,Comparable<CharSequence> {
      public static void main(String[] args) {
-          MyString test = new MyString("fortnite");
-          System.out.println(test);
-          System.out.println(test.length()); //8
-          System.out.println(test.charAt(2)); //r
-          System.out.println(test.subSequence(0, 3)); //fort
-          System.out.println(test.compareTo("epic")); //4
-          System.out.println(test.compareTo("doublefortnite")); //-6
+
      }
 
      private char[] data;
@@ -58,11 +52,14 @@ public class MyString implements CharSequence,Comparable<CharSequence> {
      or greater than the specified object respectively */
 
      public int compareTo(CharSequence o) {
-          int diff = 0;
           if (o == null) {
                throw new NullPointerException();
           }
-          diff = this.length() - o.length();
-          return diff;
+          for (int i = 0; i < Math.min(this.length(), o.length()); i++) {
+               if (!(this.charAt(i) == (o.charAt(i)))) {
+                    return this.charAt(i) - o.charAt(i);
+               }
+          }
+          return this.length() - o.length();
      }
 }
