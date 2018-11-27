@@ -1,5 +1,6 @@
 public class MyString implements CharSequence,Comparable<CharSequence> {
      public static void main(String[] args) {
+          //used Tejas' driver for testing
           String refStr = "antidisestablishmentarianism";
           MyString testStr = new MyString(refStr);
           int c = 0;
